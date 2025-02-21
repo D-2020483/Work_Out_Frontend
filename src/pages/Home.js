@@ -9,7 +9,7 @@ const Home = () => {
 
     useEffect(() => {
         const fetchWorkouts = async () => {
-           const response = await fetch('https://fed-workout-buddy-dinithi.onrender.com/api/workouts')
+           const response = await fetch('https://fed-workout-buddy-dinithi.onrender.com')
            const json = await response.json()
 
            if(response.ok){
