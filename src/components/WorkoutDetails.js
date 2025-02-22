@@ -5,7 +5,7 @@ const WorkoutDetails = ({ workout }) => {
     const { dispatch } = useWorkoutsContext()
 
     const handleClick = async () => {
-        const response = await fetch(process.env.REACT_APP_API_URL + '/api/workouts/' + workout._id, {
+        const response = await fetch('https://fed-workout-buddy-dinithi.onrender.com/api/workouts/' + workout._id, {                
             method: 'DELETE'
         })
 
@@ -20,7 +20,7 @@ const WorkoutDetails = ({ workout }) => {
         <div className="workout-details">
             <h4>{workout.title}</h4>
             <p><strong>Load (Kg): </strong>{workout.load}</p>
-            <p><strong>Reps: </strong>{workout.load}</p>
+            <p><strong>Reps: </strong>{workout.reps}</p>
             <p>{workout.createdAt}</p>
             <span onClick={handleClick}>delete</span>
         </div>
