@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect , useState} from 'react'
 import WorkoutDetails from '../components/WorkoutDetails'
 import WorkoutForm from '../components/WorkoutForm'
 import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
@@ -9,7 +9,7 @@ const Home = () => {
 
     useEffect(() => {
         const fetchWorkouts = async () => {
-           const response = await fetch('https://fed-storefront-backend-dinithi.onrender.com/api/workouts')
+           const response = await fetch('/api/workouts')
            const json = await response.json()
 
            if(response.ok){
@@ -18,7 +18,7 @@ const Home = () => {
         }
 
         fetchWorkouts()
-    }, [dispatch])
+    }, [])
 
 
     return (
